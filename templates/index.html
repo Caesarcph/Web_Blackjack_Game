@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Login page</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+        window.onload = function() {
+            if ("{{error}}"!== "noError") {
+                console.log("{{error}}");
+                alert("{{error}}");
+            }
+        };
+    </script>
+     
+</head>
+<body>
+    <div id="loginBody">
+        <form id="loginForm" action="/" method="post">
+            <h1 id="loginHead">Welcome to Casino</h1>
+            <div class="formElements">
+                <label for="username" class="labelClass">username</label>
+                <input type="text" id="username" name="username">
+            </div>
+            <div class="formElements">            
+                <label for="password" class="labelClass">password</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <div class="formElements" id="submitDiv">
+                <input type="submit" value="Login" class="indexButton">
+                <input type="button" value="Register" class="indexButton" onclick="location.href='/register';">
+            </div>
+
+
+        </form>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Registration Success</title>
+<script>
+function redirectToHome() {
+    window.location.href = "{{ url_for('login') }}"; // 重定向到首页
+}
+window.onload = function() {
+    // set count down to 10
+    var timeLeft = 10;
+    
+    // set interval to countdown
+    var timerId = setInterval(countdown, 1000);
+    
+    function countdown() {
+        if (timeLeft == 0) {
+            clearTimeout(timerId);
+            window.location.href = "{{ url_for('login') }}"; // 重定向到首页
+        } else {
+            document.getElementById("countdown").innerHTML = timeLeft + ' seconds remaining';
+            timeLeft--;
+        }
+    }
+};
+</script>
+</head>
+<body>
+
+<h1>Registration Successful! Waiting for staff validate your document</h1>
+<p>Redirecting in <span id="countdown">10 seconds</span>...</p>
+<button onclick="redirectToHome()">Go to Home Now</button>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Regiser page</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script defer src="/static/script/register.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script>
+        var errorMessages = {{ errors | tojson | safe }};
+        window.onload = function() {
+            if (errorMessages.length > 0) {
+    alert(errorMessages.join('; '));
+}
+        };
+    </script>
+<body id="loginBody">
+    <div id="registerBody">
+        <form id="registerForm" method="post" enctype="multipart/form-data">
+            <h1 id="registerHead">Register</h1>
+            <div class="formElements">
+                <label for="username" class="labelClass">Username</label>
+                <input type="text" id="username" name="username">
+            </div>
+            <div class="formElements">            
+                <label for="password" class="labelClass">Password</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <div class="formElements">            
+                <label for="password" class="labelClass">Confirm password</label>
+                <input type="password" id="confirm" name="confirm">
+            </div>
+            <div class="formElements">            
+                <label for="email" class="labelClass">Email</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="formElements">            
+                <label for="Phone_umber" class="labelClass">Phone number</label>
+                <input type="tel" id="Phone_umber" name="Phone_number">
+            </div>
+            
+            <div class="formElements" id="datePickerDiv">
+                <label class="labelClass">date of birth</label>
+                    <div class="col-md-6" id="datePickerRow">
+                        <div class="form-group" id="datePickerGroup">
+                            <div class="input-group date" id="datepicker">
+                                <input type="text" class="form-control" name="birth">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+            <div class="formElements">
+                <label for="formFile" class="labelClass">Upload your ID</label>
+                <input class="form-control" type="file" id="formFile" accept="image/*" name="formFile">
+            </div>
+
+            <div class="formElements" id="submitDiv">
+                <input type="submit" value="register" id="submitButton">
+            </div>
+
+
+        </form>
+    </div>
+    
+</body>
+</html>

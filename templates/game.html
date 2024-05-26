@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Game</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script defer src="/static/script/game.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="gameBody">
+        <div class="start">
+            <h1 id="moneyLeft"></h1>
+            <form id="BetForm">   
+                <label id="BetsLabel">Bets</label>         
+                <input type="number" id="BetsInput" min="1" value="1">
+                <button type="button" class="btn btn-primary" id="startButton">Start</button>
+            </form>
+            <h1 id='playerBust' class='endFlag'>You Bust!</h1>
+            <h1 id='tie' class='endFlag'>Tie!</h1>
+            <h1 id='dealerBust' class='endFlag'>Dealer Bust!</h1>
+            <h1 id='dealerWin' class='endFlag'>Dealer Win!</h1>
+            <h1 id='playerWin' class='endFlag'>You Win!</h1>
+        </div>
+        <div id="betDiv">
+            <label id="RestartBetsLabel">Bets</label>         
+            <input type="number" id="RestartBetsInput" min="1" value="1">
+            <button type="button" class="btn btn-primary" id="betButton">Restart</button>
+        </div>
+    <div id="playerCardsContainer">
+    </div>
+    <div id="dealerCardsContainer">
+    </div>
+    </div>
+    
+</body>
+</html>
